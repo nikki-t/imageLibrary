@@ -1,0 +1,23 @@
+<h3>{{title}}</h3>
+<div class="row row-cols-3">
+    {{#each images}}
+    <div class="col">
+        <div class="image-container">
+            <a href=/images/id/{{this.id}}>
+            {{#if this.vertical}}
+                <img class="img-thumbnail gallery-img-ver" src={{this.image}} alt={{this.title}}/>
+            {{else}}
+                <img class="img-thumbnail" src={{this.image}} alt={{this.title}}/>
+            {{/if}}
+            </a>
+        </div>
+        <div class="image-text">
+            <p><b>Title: </b><a href=/images/id/{{this.id}}>{{this.title}}</a></p>
+            <p><b>Creator: </b>{{this.creator}}</p>
+            {{#if this.date}}
+                <p><b>Date Created: </b>{{this.date}}</p>
+            {{/if}}
+        </div>            
+    </div>
+    {{/each}}
+</div>

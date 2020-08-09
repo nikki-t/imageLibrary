@@ -1,0 +1,42 @@
+<h3>{{image.title}}</h3>
+
+<div class="float-none" id="record-image-hor">
+    <img src={{image.image}} alt={{image.title}} />
+</div>
+
+<div class="row record">
+    <div class="col record"><b>Title: </b>{{image.title}}</div>
+    <div class="col record"><b>Creator: </b>{{image.creator}}</div>
+    <div class="col record"><b>Date: </b>{{image.date}}</div>
+</div>
+<div class="row record">
+    <div class="col record"><b>Category: </b>{{image.category}}</div>
+    <div class="col-sm-8 record"><b>Tags: </b>{{image.tags}}</div>
+</div>
+<div class="row record">
+    <div class="col record"><b>Description: </b>{{image.description}}</div>
+</div>
+
+{{#if image.exifAvailable}}
+    <hr />
+    <div class="row row-cols-3 record">
+        <div>
+            <div class="col record"><b>Camera: </b>{{image.camera}}</div>
+            <div class="col record"><b>Aperture: </b>{{image.aperture}}</div>
+            <div class="col record"><b>Exposure: </b>{{image.exposure}}</div>
+        </div>
+        <div></div>
+        <div>
+            <div class="col record"><b>ISO: </b>{{image.iso}}</div>
+            <div class="col record"><b>Focal Length: </b>{{image.focalLength}}</div>
+            <div class="col record"><b>Resolution: </b>{{image.resolution}}</div>
+        </div>
+    </div>
+{{/if}}
+
+{{#if image.gpsAvailable}}
+    <hr />
+    <div class="location-record">
+        <p><b>Location: </b>{{image.gps.city}} | {{image.gps.state}} | {{image.gps.country}}</p>
+    </div>
+{{/if}}

@@ -1,0 +1,28 @@
+<h3>are you sure you want to delete: &ldquo;{{image.title}}&rdquo;?</h3>
+
+<div class="row row-cols-2">
+    {{#if image.vertical}}
+        <div class="col delete-ver">
+            <img class="delete-ver" src={{image.image}} alt={{image.title}} />
+        </div>
+    {{else}}
+        <div class="col">
+            <img class="delete-hor" src={{image.image}} alt={{image.title}} />
+        </div>
+    {{/if}}
+    <div class="col">
+        <p><b>Title: </b>{{image.title}}</p>
+        <p><b>Creator: </b>{{image.creator}}</p>
+        <p><b>Date: </b>{{image.date}}</p>
+        <p><b>Category: </b>{{image.category}}</p>
+        <p><b>Tags: </b>{{image.tags}}</p>
+        <p><b>Description: </b>{{image.description}}</p>
+        <p>
+            <form method="post" action="/admin/delete">
+                <input type="hidden" name="id" value="{{image.id}}">
+                <input class="btn btn-primary" id="del-btn" type="submit" value="Delete" name="delete">
+                <button type="button" class="btn btn-primary" id="cancel-btn" onclick="cancelDelete()">Cancel</button>
+            </form>
+        </p>
+    </div>
+</div>

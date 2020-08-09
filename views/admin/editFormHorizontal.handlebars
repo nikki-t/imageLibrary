@@ -1,0 +1,188 @@
+<h3>edit.</h3>
+
+<div class="upload-error">
+    {{#each errors}}
+        <p>{{this.msg}}</p>
+    {{/each}}
+</div>
+
+<div class="float-none" id="record-image-hor">
+    <img src={{image.image}} alt={{image.title}} />
+</div>
+
+<form class="edit-form" method="post" action="/admin/edit">
+    
+    <input type="hidden" name="id" value="{{image.id}}">
+    {{#if image.exifAvailable}}
+        <input type="hidden" name="exifAvailable" value="true">
+    {{else}}
+        <input type="hidden" name="exifAvailable" value="false">
+    {{/if}}
+    <input type="hidden" name="fileName" value="{{image.fileName}}">
+    <input type="hidden" name="imagePath" value="{{image.imagePath}}">
+    
+    <div class="form-group row">
+        <label for="title" class="col-sm-2 col-form-label">Title</label>
+        <div class="col"><input type="text" class="form-control" id="title" name="title" value="{{image.title}}"></div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col row">
+                <label for="firstName" class="col-sm-3 col-form-label">First Name</label>
+                <div class="col"><input type="text" class="form-control" id="firstName" name="firstName" value="{{image.firstName}}"></div>
+            </div>
+            <div class="col row">
+                <label for="lastName" class="col-sm-3 col-form-label">Last Name</label>
+                <div class="col"><input type="text" class="form-control" id="lastName" name="lastName" value="{{image.lastName}}"></div>
+            </div>
+        </div>
+    </div>
+    
+    <hr />
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col row">
+                <label for="date" class="col-sm-3 col-form-label">Date</label>
+                <div class="col">
+                    <input type="text" class="form-control edit-date" id="year" name="year" value="{{image.date.year}}">
+                    <small id="yearHelpBlock" class="form-text text-muted">
+                        YEAR: Please enter a 4-digit year
+                    </small>
+                    <input type="text" class="form-control edit-date" id="month" name="month" value="{{image.date.month}}">
+                    <small id="monthHelpBlock" class="form-text text-muted">
+                        MONTH: Please enter a 1- or 2-digit month
+                    </small>
+                    <input type="text" class="form-control edit-date" id="day" name="day" value="{{image.date.day}}">
+                    <small id="dayHelpBlock" class="form-text text-muted">
+                        DAY: Please enter a 1- or 2-digit day
+                    </small> 
+                </div>
+            </div>
+            <div class="col row">
+                <label for="Time" class="col-sm-3 col-form-label">Time</label>
+                <div class="col">
+                    <input type="text" class="form-control edit-date" id="hour" name="hour" value="{{image.time.hour}}">
+                    <small id="hourHelpBlock" class="form-text text-muted">
+                        HOUR: Please enter a 1- or 2-digit hour
+                    </small> 
+                    <input type="text" class="form-control edit-date" id="minute" name="minute" value="{{image.time.minute}}">
+                    <small id="minuteHelpBlock" class="form-text text-muted">
+                        MINUTE: Please enter a 1- or 2-digit minute
+                    </small> 
+                    <input type="text" class="form-control edit-date" id="second" name="second" value="{{image.time.second}}">
+                    <small id="secondHelpBlock" class="form-text text-muted">
+                        SECOND: Please enter a 1- or 2-digit second
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    
+    <div class="form-group row">
+        <div class="col row">
+            <label for="category" class="col-sm-3 col-form-label">Category</label>
+            <div class="col"><input type="text" class="form-control" id="category" name="category" value="{{image.category}}"></div>
+        </div>
+        <div class="col row">
+            <label for="tags" class="col-sm-3 col-form-label">Tags</label>
+            <div class="col">
+                <input type="text" class="form-control" id="tags" name="tags" value="{{image.tags}}">
+                <small id="dateHelpBlock" class="form-text text-muted">
+                        Please separate each tag by a comma.
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10"><input type="text" class="form-control" id="description" name="description" value="{{image.description}}"></div>
+    </div>
+    
+    <hr />
+
+    {{#if image.exifAvailable}}
+        <div class="form-group row edit-row">
+            <label for="camera" class="col-sm-3 col-form-label"><b>Camera:</b></label>
+            <div class="col-7">
+                <input type="text" class="form-control-plaintext" id="camera" name="camera" placeholder="{{image.camera}}" value="{{image.camera}}" readonly>
+            </div>
+        </div>
+
+        <div class="form-group row edit-row">
+            <label for="aperture" class="col-sm-3 col-form-label"><b>Aperture:</b></label>
+            <div class="col-7">
+                <input type="text" class="form-control-plaintext" id="aperture" name="aperture" placeholder="{{image.aperture}}" value="{{image.aperture}}" readonly>
+            </div>
+        </div>
+
+        <div class="form-group row edit-row">
+            <label for="exposure" class="col-sm-3 col-form-label"><b>Exposure:</b></label>
+            <div class="col-7">
+                <input type="text" class="form-control-plaintext" id="exposure" name="exposure" placeholder="{{image.exposure}}" value="{{image.exposure}}" readonly>
+            </div>
+        </div>
+
+        <div class="form-group row edit-row">
+            <label for="iso" class="col-sm-3 col-form-label"><b>ISO:</b></label>
+            <div class="col-7">
+                <input type="text" class="form-control-plaintext" id="iso" name="iso" placeholder="{{image.iso}}" value="{{image.iso}}" readonly>
+            </div>
+        </div>
+
+        <div class="form-group row edit-row">
+            <label for="focalLength" class="col-sm-3 col-form-label"><b>Focal Length:</b></label>
+            <div class="col-7">
+                <input type="text" class="form-control-plaintext" id="focalLength" name="focalLength" placeholder="{{image.focalLength}}mm" value="{{image.focalLength}}" readonly>
+            </div>
+        </div>
+
+        <div class="form-group row edit-row">
+            <label for="resolution" class="col-sm-3 col-form-label"><b>Resolution:</b></label>
+            <div class="col-7">
+                <input type="text" class="form-control-plaintext" id="resolution" name="resolution" placeholder="{{image.resolution}}" value="{{image.resolution}}" readonly>
+            </div>
+        </div>
+    {{else}}
+        <input type="hidden" name="camera" value="not available">
+        <input type="hidden" name="aperture" value="0">
+        <input type="hidden" name="iso" value="0">
+        <input type="hidden" name="focalLength" value="0">
+        <input type="hidden" name="resolution" value="0 x 0">
+    {{/if}}
+    
+    <hr />
+    
+    <p>Location</p>
+            <div class="form-group row edit-row">
+                <div class="row location-edit">
+                    <label for="city" class="col-sm-3 col-form-label"><b>City:</b></label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="city" name="city" value="{{image.city}}">
+                    </div>
+                </div>
+                <div class="row location-edit">
+                    <label for="state" class="col-sm-3 col-form-label"><b>State:</b></label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="state" name="state" value="{{image.state}}">
+                    </div>
+                </div>
+                <div class="row location-edit">
+                    <label for="country" class="col-sm-3 col-form-label"><b>Country:</b></label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="country" name="country" value="{{image.country}}">
+                    </div>
+                </div>
+            </div>
+    
+    <hr />
+   
+    <div class="form-group"></div>
+        <input class="btn btn-primary" id="edit-btn" type="submit" value="Update" name="submit">
+        <button type="button" class="btn btn-primary" id="cancel-btn" onclick="cancelDelete()">Cancel</button>
+    </div>
+</form>

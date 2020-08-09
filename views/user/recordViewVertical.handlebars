@@ -1,0 +1,31 @@
+<h3>{{image.title}}</h3>
+
+<div class="row row-cols-2" id="record-image-ver">
+    <div class="col vertical">
+        <img class="vertical" src={{image.image}} alt={{image.title}} />
+    </div>
+    <div class="col">
+        <p><b>Title: </b>{{image.title}}</p>
+        <p><b>Creator: </b>{{image.creator}}</p>
+        {{#if image.date}}
+            <p><b>Date: </b>{{image.date}}</p>
+        {{/if}}
+        <p><b>Category: </b>{{image.category}}</p>
+        <p><b>Tags: </b>{{image.tags}}</p>
+        <p><b>Description: </b>{{image.description}}</p>
+        {{#if image.exifAvailable}}
+            <hr />
+            <p><b>Camera: </b>{{image.camera}}</p>
+            <p><b>Aperture: </b>{{image.aperture}}</p>
+            <p><b>Exposure: </b>{{image.exposure}}</p>
+            <p><b>ISO: </b>{{image.iso}}</p>
+            <p><b>Focal Length: </b>{{image.focalLength}}</p>
+            <p><b>Resolution: </b>{{image.resolution}}</p>
+        {{/if}}
+        
+        {{#if image.gpsAvailable}}
+            <hr />
+            <p><b>Location: </b>{{image.gps.city}} | {{image.gps.state}} | {{image.gps.country}}</p>
+        {{/if}}
+    </div>
+</div>

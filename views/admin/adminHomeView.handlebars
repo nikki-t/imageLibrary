@@ -1,0 +1,29 @@
+<div class="float-left">
+    <h3>{{title}}</h3>
+</div>
+<div class="float-right">
+    <button type="button" class="btn btn-primary" id="upload-btn" onclick="upload()">Upload</button>
+</div>
+<div class="float-none row row-cols-3" id="admin-gallery">
+    {{#each images}}
+    <div class="col">
+        <div class="image-container">
+            <a href=/admin/edit/id/{{this.id}}>
+            {{#if this.vertical}}
+                <img class="img-thumbnail gallery-img-ver" src={{this.image}} alt={{this.title}}/>
+            {{else}}
+                <img class="img-thumbnail" src={{this.image}} alt={{this.title}}/>
+            {{/if}}
+            </a>
+        </div>
+        <div class="image-text">
+            <p><b>Title: </b><a href=/admin/edit/id/{{this.id}}>{{this.title}}</a></p>
+            <p><b>Creator: </b>{{this.creator}}</p>
+            {{#if this.date}}
+                <p><b>Date Created: </b>{{this.date}}</p>
+            {{/if}}
+            <p class="admin-links"><a href=/admin/edit/id/{{this.id}}>Edit</a>    |    <a href=/admin/delete/id/{{this.id}}>Delete</a></p>
+        </div>          
+    </div>
+    {{/each}}
+</div>

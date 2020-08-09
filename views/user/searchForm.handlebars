@@ -1,0 +1,39 @@
+<h3>search by date.</h3>
+
+<div class="search-error">
+    {{#each errors}}
+        <p>{{this.msg}}</p>
+    {{/each}}
+</div>
+
+<form method="post" action="/images/search">
+    <div class="form-group search">
+        <label for="year">Year</label>
+        <input type="text" class="form-control" id="year" name="year" value="{{date.year}}">
+        <small id="yearHelpBlock" class="form-text text-muted">
+            Please enter a 4-digit year.
+        </small>
+    </div>
+    <div class="form-group search">
+        <label for="month">Month</label>
+        <input type="text" class="form-control" id="month" name="month" value="{{date.month}}">
+        <small id="monthHelpBlock" class="form-text text-muted">
+            Please enter a 2-digit month.
+        </small>
+    </div>
+    <div class="form-group search">
+        <label for="day">Day</label>
+        <input type="text" class="form-control" id="day" name="day" value="{{date.day}}">
+        <small id="dayHelpBlock" class="form-text text-muted">
+            Please enter a 1- or 2-digit day.
+        </small>
+    </div>
+    <div class="form-group search">
+        <input class="btn btn-primary" type="submit" value="Search" name="submit">
+    </div>
+    <div>
+        <p>* you may search by year</p>
+        <p>* or year, month</p>
+        <p>* or year, month, day</p>
+    </div>
+</form>

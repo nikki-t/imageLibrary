@@ -1,0 +1,31 @@
+<h3>login</h3>
+{{#if error.missing }}
+    <div id="missingHelpBlock" class="form-text text-muted">
+        <p>{{error.missing}}</p>
+    </div>
+{{/if}}
+<form method="post" action="/admin/login">
+    <div>
+        <div class="login-row">
+            <label for="username">User Name</label>
+            <input type="text" class="form-control" id="username" name="username">
+            {{#if error.username }}
+                <small id="userNameHelpBlock" class="form-text text-muted">
+                    <p>{{error.username}}</p>
+                </small>
+            {{/if}}
+        </div>
+        <div class="login-row">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+            {{#if error.password }}
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    <p>{{error.password}}</p>
+                </small>
+            {{/if}}
+        </div>
+        <div class="login-row">
+            <input class="btn btn-primary" type="submit" value="Login" name="login">
+        </div>
+    </div>
+</form>

@@ -1,0 +1,15 @@
+<h3>browse by category.</h3>
+<form method="post" action="/images/browse">
+    <div class="form-row">
+        <div class="col">
+            <select name="category" class="form-control" >
+                {{#each categories}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="col">
+            <input class="btn btn-primary" type="submit" value="Browse" name="browse">
+        </div>
+    </div>
+</form>
