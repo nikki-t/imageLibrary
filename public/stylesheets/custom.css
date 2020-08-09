@@ -1,0 +1,189 @@
+/* Main */
+header {
+    margin: 0 auto 5em;
+    width: 70%;
+    height: 100px;
+    background: url(/images/header.png);
+}
+
+#header-title {
+    text-align: center;
+    padding: 0.55em;
+}
+
+footer {
+    margin: 3.5em auto;
+    width: 70%;
+}
+
+#footer-div-left {
+    float: left;
+}
+
+#footer-div-right {
+    float: right;
+}
+
+small {
+    margin-bottom: 1em;
+}
+
+/* Links */
+a {
+    color: #444444;
+}
+
+.nav-link.active {
+    color: #222222;
+}
+
+/* Forms */
+.btn-primary {
+    background-color: #444444;
+    border-color: #444444;
+}
+
+/* Responsive images */
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+/* Gallery */
+.image-container {
+    margin-bottom: 1em;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.image-text {
+    line-height: 0.9em;
+    font-size: 0.9em;
+}
+
+img.img-thumbnail.gallery-img-ver {
+    width: 30%;
+}
+
+/* Record */
+#record-image-hor {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#record-image-ver {
+    margin: 1em auto;
+    width: 95%;
+}
+
+div.col.vertical {
+    text-align: center;
+}
+
+.row.record, .location-record {
+    margin: 0 auto;
+    width: 95%;
+}
+
+img.vertical {
+    width: 75%;
+}
+
+.col.record {
+    margin: 0.25em;
+}
+
+/* Search */
+div.form-group.search {
+    width: 25%;
+}
+
+.search-error p {
+    color: red;
+}
+
+/* Admin Home View */
+.admin-links>a {
+    color: #007bff;
+}
+
+div#admin-gallery {
+    clear: left;
+    padding-top: 2em;
+}
+
+/* Delete Form */
+img.delete-hor {
+    width: 100%;
+}
+
+img.delete-ver {
+    width: 50%;
+}
+
+div.col.delete-ver {
+    text-align: right;
+}
+
+#del-btn {
+    margin-right: 1em;
+}
+
+/* Edit Form */
+#record-image-hor img {
+    width: 100%;
+}
+
+.edit-row {
+    margin-bottom: 0em;
+}
+
+.edit-form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#edit-btn {
+    margin-right: 1em;
+}
+
+.location-edit {
+    margin: 0.5em 0;
+}
+
+/* Upload form */
+.upload {
+    margin: 2em 0 1em 0;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    width: 30%;
+}
+
+input#state {
+    width: 95%;
+}
+
+.upload-error p {
+    color: red;
+}
+
+/* Login Form */
+div.login-row {
+    margin: 2em;
+    width: 25%;
+}
+
+div#missingHelpBlock p {
+    color: red;
+}
+
+small#userNameHelpBlock p {
+    color: red;
+}
+
+small#passwordHelpBlock p {
+    color: red;
+}
