@@ -1,0 +1,28 @@
+{
+  "name": "imagelibrary",
+  "version": "1.0.0",
+  "description": "Image Library web application for display and creation of image records.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikki Tebaldi",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^2.0.2",
+    "bcrypt": "^4.0.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "exifr": "^3.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.8.11",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  }
+}
